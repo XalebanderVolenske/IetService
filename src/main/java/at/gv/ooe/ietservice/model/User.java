@@ -21,6 +21,9 @@ public class User
     private String persno;
     private String name;
 
+    @ManyToOne
+    private Department department;
+
     public User() {
     }
 
@@ -45,6 +48,14 @@ public class User
         this.name = name;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -53,4 +64,5 @@ public class User
                 ", name='" + name + '\'' +
                 '}';
     }
+
 }

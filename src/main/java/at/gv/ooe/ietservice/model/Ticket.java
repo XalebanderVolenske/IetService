@@ -30,8 +30,8 @@ public class Ticket {
     private String priority;
     private String solution;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DiaryEntry> diaryEntries;
+//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<DiaryEntry> diaryEntries;
 
     @ManyToOne(cascade =  CascadeType.ALL)
     private User ticketOwner;
@@ -51,7 +51,7 @@ public class Ticket {
         this.setProblemUserName(problemUserName);
         this.setPriority(priority);
         this.setSolution(solution);
-        diaryEntries = new ArrayList<>();
+//        diaryEntries = new ArrayList<>();
     }
 
     public Long getId() {
@@ -130,13 +130,13 @@ public class Ticket {
         this.solution = solution;
     }
 
-    public List<DiaryEntry> getDiaryEntries() {
-        return diaryEntries;
-    }
-
-    public void setDiaryEntries(List<DiaryEntry> diaryEntries) {
-        this.diaryEntries = diaryEntries;
-    }
+//    public List<DiaryEntry> getDiaryEntries() {
+//        return diaryEntries;
+//    }
+//
+//    public void setDiaryEntries(List<DiaryEntry> diaryEntries) {
+//        this.diaryEntries = diaryEntries;
+//    }
 
     public User getTicketOwner() {
         return ticketOwner;

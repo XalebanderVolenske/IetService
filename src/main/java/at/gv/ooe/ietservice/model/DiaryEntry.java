@@ -8,7 +8,7 @@ import javax.persistence.*;
  */
 
 @NamedQueries({
-        @NamedQuery(name="DiaryEntry.findAllForTicket", query = "select de from DiaryEntry de" )
+        @NamedQuery(name="DiaryEntry.findAll", query = "select de from DiaryEntry de" )
 })
 
 @Entity

@@ -23,13 +23,21 @@ public class InitBean {
     @Inject
     DepartmentDao departmentFacade;
 
+    @Inject
+    DiaryEntryDao diaryEntryFacade;
+
     @PostConstruct
     private void init() {
         System.err.println("*************** InitBean Version 2 ******************");
         Ticket ticket1 = new Ticket("Akku defekt", "10.05.2017", "12.05.2017", "", "Aktiv", "Huber", "Mizi", "Dringend", "");
-        ticket1.getDiaryEntries().add(new DiaryEntry("10.05.2017 15:30", "Huber", "Akku muss ausgetauscht werden."));
-        ticket1.getDiaryEntries().add(new DiaryEntry("10.05.2017 16:15", "Fischer", "Warten auf Anlieferung"));
-        ticket1.getDiaryEntries().add(new DiaryEntry("10.05.2017 15:30", "Huber", "Akku doch nicht defekt. Geraet muss getauscht werden."));
+//        ticket1.getDiaryEntries().add(new DiaryEntry("10.05.2017 15:30", "Huber", "Akku muss ausgetauscht werden."));
+//        ticket1.getDiaryEntries().add(new DiaryEntry("10.05.2017 16:15", "Fischer", "Warten auf Anlieferung"));
+//        ticket1.getDiaryEntries().add(new DiaryEntry("10.05.2017 15:30", "Huber", "Akku doch nicht defekt. Geraet muss getauscht werden."));
+
+        diaryEntryFacade.create(new DiaryEntry("10.05.2017 15:30", "Huber", "Akku muss ausgetauscht werden."));
+        diaryEntryFacade.create(new DiaryEntry("10.05.2017 16:15", "Fischer", "Warten auf Anlieferung"));
+        diaryEntryFacade.create(new DiaryEntry("10.05.2017 15:30", "Huber", "Akku doch nicht defekt. Geraet muss getauscht werden."));
+
         ticketFacade.create(ticket1);
         ticketFacade.create(new Ticket("Toner nicht geliefert", "08.05.2017", "11.05.2017", "", "Aktiv", "Mayr", "Gundula", "Nicht Dringend", ""));
         ticketFacade.create(new Ticket("Kein Strom", "04.05.2017", "05.05.2017", "", "Ausgesetzt", "Leeb", "Heribert", "Dringend", ""));

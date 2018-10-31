@@ -17,10 +17,13 @@ public class ConfigurationItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    @ManyToOne
+    private Department department;
 
-    /* RechenZentrumInFromationsnr.*/
+
+    /* RechenZentrumINFormationsnr.*/
     private String rZINF;
-    private String descirption;
+    private String description;
     private String ownerName;
     private String location;
     private String roomNo;
@@ -31,9 +34,9 @@ public class ConfigurationItem {
     public ConfigurationItem() {
     }
 
-    public ConfigurationItem(String rZINF, String descirption, String ownerName, String location, String roomNo, String category, String product, String status) {
+    public ConfigurationItem(String rZINF, String description, String ownerName, String location, String roomNo, String category, String product, String status) {
         this.setrZINF(rZINF);
-        this.setDescirption(descirption);
+        this.setDescription(description);
         this.setOwnerName(ownerName);
         this.setLocation(location);
         this.setRoomNo(roomNo);
@@ -52,12 +55,12 @@ public class ConfigurationItem {
         this.rZINF = rZINF;
     }
 
-    public String getDescirption() {
-        return descirption;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescirption(String descirption) {
-        this.descirption = descirption;
+    public void setDescription(String descirption) {
+        this.description = descirption;
     }
 
     public String getOwnerName() {
@@ -108,11 +111,19 @@ public class ConfigurationItem {
         this.status = status;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
     @Override
     public String toString() {
         return "ConfigurationItem{" +
                 "rZINF='" + rZINF + '\'' +
-                ", descirption='" + descirption + '\'' +
+                ", descirption='" + description + '\'' +
                 ", ownerName='" + ownerName + '\'' +
                 ", location='" + location + '\'' +
                 ", roomNo='" + roomNo + '\'' +
