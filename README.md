@@ -102,3 +102,16 @@ services:
       - MYSQL_ROOT_PASSWORD=passme
       - MYSQL_DATABASE=testdb
 ```
+
+## Skripts
+
+Folgendes Scripts stehen zur Verfügung:
+
+Script | Zweck
+---|---
+compile.sh | Kompilieren des Projekts. Das war-File wird in das customization-Verzeichnis verschoben
+build_prepared_wildfly | Löschen des Images mit anschließender Neuerstellung
+up.sh | Build und starten des docker-compose
+down.sh | Beenden und Löschen der Container
+
+mit 'docker-compose start' und 'docker-compose stop' werden beide Container gestoppt und gestartet.

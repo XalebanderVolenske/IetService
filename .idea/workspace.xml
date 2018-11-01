@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2b3bce0-6540-4a8f-b011-fef7b0eef09c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/IetService_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/IetService_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/IetService_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/IetService_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_javaee_web_api_7_0.xml" beforeDir="false" />
+    <list default="true" id="b2b3bce0-6540-4a8f-b011-fef7b0eef09c" name="Default" comment="README.txt ergänzt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IetService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IetService.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/compile.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -54,8 +50,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="370">
-                <caret line="67" column="110" lean-forward="true" selection-start-line="67" selection-start-column="110" selection-end-line="67" selection-end-column="110" />
+              <first_editor relative-caret-position="369">
+                <caret line="116" column="99" selection-start-line="116" selection-start-column="99" selection-end-line="116" selection-end-column="99" />
               </first_editor>
               <second_editor />
             </state>
@@ -206,7 +202,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541074745686" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541083490451" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/at/gv/ooe/ietservice" />
@@ -378,7 +374,7 @@
       <workItem from="1537805590571" duration="1672000" />
       <workItem from="1541012669985" duration="423000" />
       <workItem from="1541027002554" duration="9288000" />
-      <workItem from="1541056744992" duration="12120000" />
+      <workItem from="1541056744992" duration="13528000" />
     </task>
     <task id="LOCAL-00001" summary="docker-compose eingeführt. Ein Zwischen-Image für Wildfly erstellt (Installation von mysql-Client), Scripts zum Starten und Stoppen ergänzt">
       <created>1541067023048</created>
@@ -387,11 +383,25 @@
       <option name="project" value="LOCAL" />
       <updated>1541067023049</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Dokumentation erstellt README.txt">
+      <created>1541074829264</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1541074829264</updated>
+    </task>
+    <task id="LOCAL-00003" summary="README.txt ergänzt">
+      <created>1541082877833</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1541082877833</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58281000" />
+    <option name="totallyTimeSpent" value="59689000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -424,12 +434,12 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32893" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5030488" side_tool="true" weight="0.47660097" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5030488" side_tool="true" weight="0.32635468" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.3275862" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49695122" visible="true" weight="0.32635468" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49695122" weight="0.32635468" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.328084" />
-      <window_info anchor="bottom" id="Docker" order="12" sideWeight="0.49695122" weight="0.47660097" />
+      <window_info anchor="bottom" id="Docker" order="12" sideWeight="0.49695122" visible="true" weight="0.47660097" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.328084" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -490,7 +500,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="docker-compose eingeführt. Ein Zwischen-Image für Wildfly erstellt (Installation von mysql-Client), Scripts zum Starten und Stoppen ergänzt" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker-compose eingeführt. Ein Zwischen-Image für Wildfly erstellt (Installation von mysql-Client), Scripts zum Starten und Stoppen ergänzt" />
+    <MESSAGE value="Dokumentation erstellt README.txt" />
+    <MESSAGE value="README.txt ergänzt" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.txt ergänzt" />
   </component>
   <component name="editorHistoryManager">
     <entry file="dbDummy://dbtable:/757ada41/5381f152-0c26-4a94-bfad-830076aeea3e/testdb.user" />
@@ -797,13 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/up.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -822,13 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build_prepared_wildfly.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -860,11 +858,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build_prepared_wildfly.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compile.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="370">
-            <caret line="67" column="110" lean-forward="true" selection-start-line="67" selection-start-column="110" selection-end-line="67" selection-end-column="110" />
+          <first_editor relative-caret-position="369">
+            <caret line="116" column="99" selection-start-line="116" selection-start-column="99" selection-end-line="116" selection-end-column="99" />
           </first_editor>
           <second_editor />
         </state>
