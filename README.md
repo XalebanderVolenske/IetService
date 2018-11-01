@@ -1,5 +1,16 @@
 # IetService
 
+## Ablauf
+
+Folgende Scripts müssen in nachstehender Reihenfolge gestartet werden:
+
+- `./compile.sh`
+- `./build_prepared_wildfly.sh`
+- `./up.sh` (Achtung: hier muss man ca 1 min warten, bis der Wildfly 2x gestartet wurde --> im Docker-log nachsehen)
+- `./down.sh` zum Beenden des Systems
+- `docker-compose stop` zum anhalten
+- `docker-compose start` zum Weiterlaufen lassen
+
 ## Neues Image für Wildfly
 
 Für den Application Server Wildfly wurde ein Zwischen-Image erstellt.
