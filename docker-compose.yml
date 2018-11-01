@@ -1,0 +1,32 @@
+# JEE Aplication Stack for Development
+# run docker-compose up --build from the commandline
+
+version: '2.0'
+
+services:
+  iet_service:
+    build: docker/deploy
+    ports:
+      - 8080:8080
+      - 9990:9990
+    depends_on:
+      - iet_mariadb
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=passme
+      - MYSQL_ROOT_PASSWORD=passme
+      - MYSQL_DATABASE=testdb
+
+  iet_mariadb:
+    image: mariadb
+    ports:
+      - 3306:3306
+    volumes:
+      - ~/docker/data/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=passme
+      - MYSQL_ROOT_PASSWORD=passme
+      - MYSQL_DATABASE=testdb
+  #volumes:
+  #  ~/docker/data/mysql:
