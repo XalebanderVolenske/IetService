@@ -7,7 +7,7 @@ Für den Application Server Wildfly wurde ein Zwischen-Image erstellt.
 Dieses Image beinhaltet die Installation des mysql-clients, der zur Überprüfung verwendet wird, ob die Datenbank schon verfügbar ist.
 
 Mit dem Skript `build_prepared_wildfly.sh` wird ein ev. vorhandenes Image gelöscht und ein neues Image gebuildet.
-Dieses Image basiert auf Wildfly 14
+Dieses Image basiert auf Wildfly 14.
 
 
 Dockerfile: 
@@ -22,6 +22,8 @@ RUN yum -y install bash mysql && \
     yum clean all && \
     rm -rf /var/cache/yum /var/log/yum.log
 ```
+
+Da die zeitinsive Installation des mysql-clients nun nur einmal durchgeführt werden muss, erfolgt das Deployment sehr rasch.
 
 ## Eigenes Image für das Deployment des war-Files
 
