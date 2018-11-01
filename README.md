@@ -11,6 +11,14 @@ Folgende Scripts müssen in nachstehender Reihenfolge gestartet werden:
 - `docker-compose stop` zum anhalten
 - `docker-compose start` zum Weiterlaufen lassen
 
+## Testen mit
+
+```bash
+curl http://localhost:8080/ietservice/rs/ticketservice
+curl -X GET -H "Accept: application/json" http://localhost:8080/ietservice/rs/ticketservice/tickets
+curl http://localhost:8080/ietservice/rs/ticketservice/tickets
+```
+
 ## Neues Image für Wildfly
 
 Für den Application Server Wildfly wurde ein Zwischen-Image erstellt.
