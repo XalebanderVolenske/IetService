@@ -1,6 +1,7 @@
 package at.gv.ooe.ietservice.business;
 
 import at.gv.ooe.ietservice.model.Department;
+import at.gv.ooe.ietservice.model.User;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -26,6 +27,11 @@ public class DepartmentDao {
                 .createNamedQuery("Department.findAll", Department.class);
         return query.getResultList();
 
+    }
+
+    public Department getDepartmentFromUser(long userId) {
+        System.out.println("------------------ DptDao: ---------------- UserID: " + userId + "-----------------");
+        return em.createNamedQuery("Department.getDepartmentFromUser", Department.class).setParameter("userId", userId).getSingleResult();
     }
 
 }

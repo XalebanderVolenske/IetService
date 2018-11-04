@@ -23,10 +23,15 @@ public class DiaryEntryDao {
         em.persist(diaryEntry);
     }
 
-
     public List<DiaryEntry> findAll() {
         TypedQuery<DiaryEntry> query = em
                 .createNamedQuery("DiaryEntry.findAll", DiaryEntry.class);
+        return query.getResultList();
+    }
+
+    public List<DiaryEntry> getDiaryEntriesFromTicket(long ticketId) {
+        TypedQuery<DiaryEntry> query = em
+                .createNamedQuery("DiaryEntry.getDiaryEntriesFromTicket", DiaryEntry.class).setParameter("ticketId", ticketId);
         return query.getResultList();
     }
 

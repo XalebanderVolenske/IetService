@@ -8,7 +8,8 @@ import javax.persistence.*;
  */
 
 @NamedQueries({
-        @NamedQuery(name="DiaryEntry.findAll", query = "select de from DiaryEntry de" )
+        @NamedQuery(name="DiaryEntry.findAll", query = "select de from DiaryEntry de" ),
+        @NamedQuery(name="DiaryEntry.getDiaryEntriesFromTicket", query = "select de from DiaryEntry de where de.ticket.id = :ticketId" )
 })
 
 @Entity
@@ -21,15 +22,18 @@ public class DiaryEntry {
     private String specialistName;
     private String entry;
 
+    @ManyToOne
+    private Ticket ticket;
+
     public DiaryEntry() {
     }
 
-    public DiaryEntry(String createdDate, String specialistName, String entry) {
-        this.setCreatedDate(createdDate);
-        this.setSpecialistName(specialistName);
-        this.setEntry(entry);
+    public DiaryEntry(String createdDate, String specialistName, String entry, Ticket ticket) {
+        this.createdDate = createdDate;
+        this.specialistName = specialistName;
+        this.entry = entry;
+        this.ticket = ticket;
     }
-
 
     public String getCreatedDate() {
         return createdDate;
@@ -53,6 +57,14 @@ public class DiaryEntry {
 
     public void setEntry(String entry) {
         this.entry = entry;
+    }
+
+    public Ticket getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(Ticket ticket) {
+        this.ticket = ticket;
     }
 
     @Override

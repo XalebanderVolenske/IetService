@@ -1,17 +1,16 @@
 package at.gv.ooe.ietservice.model;
 
-import at.gv.ooe.ietservice.model.DiaryEntry;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDateTime;
 
 /**
  * Created by alexandervollovec on 07/05/2017.
  */
 @NamedQueries({
         @NamedQuery(name = "Ticket.findAll", query = "select t from Ticket t"),
-        @NamedQuery(name = "Ticket.findTicketsFromTicketOwner", query = "select t from Ticket t where t.ticketOwner = :ticketOwner" )
+        @NamedQuery(name = "Ticket.getTicketsFromUser", query = "select t from Ticket t where t.ticketOwner.id = :userId"),
+        @NamedQuery(name = "Ticket.getTicketsFromDepartment", query = "select t from Ticket t where t.ticketOwner.department.id = :departmentId"),
+        @NamedQuery(name = "Ticket.getTicketsByDateRangeFromUser", query = "select t from Ticket t where t.ticketOwner.id = :userId and t.startDate between :startDate and :endDate")
 })
 @Entity
 public class Ticket {
@@ -19,43 +18,47 @@ public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String shortDesc;
     private String description;
-    private String startDate;
-    private String answerDate;
-    private String closedDate;
+    private LocalDateTime startDate;
+    private LocalDateTime answerDate;
     private String status;
-    private String specialistName;
-    private String problemUserName;
     private String priority;
     private String solution;
-
-//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<DiaryEntry> diaryEntries;
+    private String service;
 
     @ManyToOne(cascade =  CascadeType.ALL)
     private User ticketOwner;
 
+    @ManyToOne(cascade =  CascadeType.ALL)
+    private User problemUser;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private User specialistUser;
+
     public Ticket() {
     }
 
-    public Ticket(String description, String startDate, String answerDate,
-                  String closedDate, String status, String specialistName,
-                  String problemUserName, String priority, String solution) {
+    public Ticket(String shortDesc, String description, LocalDateTime startDate, LocalDateTime answerDate, String status, String priority, String solution, String service, User ticketOwner, User problemUser, User specialistUser) {
+        this.shortDesc = shortDesc;
         this.description = description;
-        this.setStartDate(startDate);
-        this.setAnswerDate(answerDate);
-        this.setClosedDate(closedDate);
-        this.setStatus(status);
-        this.setSpecialistName(specialistName);
-        this.setProblemUserName(problemUserName);
-        this.setPriority(priority);
-        this.setSolution(solution);
-//        diaryEntries = new ArrayList<>();
+        this.startDate = startDate;
+        this.answerDate = answerDate;
+        this.status = status;
+        this.priority = priority;
+        this.solution = solution;
+        this.service = service;
+        this.ticketOwner = ticketOwner;
+        this.problemUser = problemUser;
+        this.specialistUser = specialistUser;
     }
 
-    public Long getId() {
-        return id;
+    public String getShortDesc() {
+        return shortDesc;
+    }
+
+    public void setShortDesc(String shortDesc) {
+        this.shortDesc = shortDesc;
     }
 
     public String getDescription() {
@@ -66,28 +69,20 @@ public class Ticket {
         this.description = description;
     }
 
-    public String getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public String getAnswerDate() {
+    public LocalDateTime getAnswerDate() {
         return answerDate;
     }
 
-    public void setAnswerDate(String answerDate) {
+    public void setAnswerDate(LocalDateTime answerDate) {
         this.answerDate = answerDate;
-    }
-
-    public String getClosedDate() {
-        return closedDate;
-    }
-
-    public void setClosedDate(String closedDate) {
-        this.closedDate = closedDate;
     }
 
     public String getStatus() {
@@ -96,22 +91,6 @@ public class Ticket {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public String getSpecialistName() {
-        return specialistName;
-    }
-
-    public void setSpecialistName(String specialistName) {
-        this.specialistName = specialistName;
-    }
-
-    public String getProblemUserName() {
-        return problemUserName;
-    }
-
-    public void setProblemUserName(String problemUserName) {
-        this.problemUserName = problemUserName;
     }
 
     public String getPriority() {
@@ -130,13 +109,13 @@ public class Ticket {
         this.solution = solution;
     }
 
-//    public List<DiaryEntry> getDiaryEntries() {
-//        return diaryEntries;
-//    }
-//
-//    public void setDiaryEntries(List<DiaryEntry> diaryEntries) {
-//        this.diaryEntries = diaryEntries;
-//    }
+    public String getService() {
+        return service;
+    }
+
+    public void setService(String service) {
+        this.service = service;
+    }
 
     public User getTicketOwner() {
         return ticketOwner;
@@ -146,6 +125,22 @@ public class Ticket {
         this.ticketOwner = ticketOwner;
     }
 
+    public User getProblemUser() {
+        return problemUser;
+    }
+
+    public void setProblemUser(User problemUser) {
+        this.problemUser = problemUser;
+    }
+
+    public User getSpecialistUser() {
+        return specialistUser;
+    }
+
+    public void setSpecialistUser(User specialistUser) {
+        this.specialistUser = specialistUser;
+    }
+
     @Override
     public String toString() {
         return "Ticket{" +
@@ -153,5 +148,6 @@ public class Ticket {
                 ", description='" + description + '\'' +
                 '}';
     }
+
 }
 

@@ -24,6 +24,6 @@ public class UserDao {
         return em.createNamedQuery("User.findAll", User.class).getResultList();
     }
     public User findUserByPersNo(String persNo) {
-        return em.createNamedQuery("User.findUserByPersNo", User.class).setParameter("persNo", persNo).getSingleResult();
+        return em.createNamedQuery("User.getUserByPersNo", User.class).setParameter("persNo", persNo).getSingleResult();
     }
 }
